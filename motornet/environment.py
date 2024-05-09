@@ -453,7 +453,7 @@ class RandomTargetReach(Environment):
     super().__init__(*args, **kwargs)
     self.obs_noise[:self.skeleton.space_dim] = [0.] * self.skeleton.space_dim  # target info is noiseless
 
-  def reset(self, *, seed: Optional[int = None, options: Optional[dict[str, Any]] = None) -> tuple[Any, dict[str, Any]]:
+  def reset(self, *, seed: Optional[int] = None, options: Optional[dict[str, Any]] = None) -> tuple[Any, dict[str, Any]]:
     """
     Uses the :meth:`Environment.reset()` method of the parent class :class:`Environment` that can be overwritten to 
     change the returned data. Here the goals (`i.e.`, the targets) are drawn from a random uniform distribution across
